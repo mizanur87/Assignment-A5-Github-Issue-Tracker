@@ -12,8 +12,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Login | GT Issue Tracker</title>
   </head>
+
   <body class="py-20 min-h-screen max-w-sm mx-auto">
-    <!-- Form -->
     <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto">
       <!-- top part -->
       <div class="logo mx-auto text-center pt-10">
@@ -30,8 +30,8 @@
             >Username</label
           >
           <input
-            type="email"
-            class="input rounded-[8px]"
+            type="text"
+            class="input rounded-[8px] w-full"
             placeholder="Enter Username"
           />
           <p class="text-[14px] text-[#4A00FF]">Default:admin</p>
@@ -39,19 +39,29 @@
             >Password</label
           >
           <input
-            type="Enter password"
-            class="input rounded-[8px]"
+            type="password"
+            class="input rounded-[8px] w-full"
             placeholder="Enter Password"
           />
           <p class="text-[14px] text-[#4A00FF]">Default:admin123</p>
           <button
-            class="btn btn-neutral rounded-[8px] mt-4 bg-[#4A00FF] border-none"
+            class="text-white btn btn-neutral rounded-[8px] mt-4 bg-[#4A00FF] border-none"
           >
             Sign In
           </button>
         </fieldset>
-        <hr class="opacity-10 my-[24px]" />
-        <p class="text-center">Demo Credentials:</p>
+        <!-- lowerPart -->
+
+        <hr class="opacity-15 my-[15px]" />
+        <!-- <div
+          class="divider divider-neutral text-sm font-light opacity-20 text-[#1F2937]"
+        >
+          or
+        </div> -->
+
+        <p class="text-center text-[#64748B] text-[14px] pb-[2px]">
+          Demo Credentials:
+        </p>
         <div class="bg-[#F8FAFC] p-[24px] rounded-[8px] text-center">
           <p><span class="font-semibold">Username:</span> admin</p>
           <p><span class="font-semibold">Password:</span> admin123</p>
