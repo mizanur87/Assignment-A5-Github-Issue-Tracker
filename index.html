@@ -1,18 +1,62 @@
 <!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Daisy ui && tailwind -->
     <link
-            href="https://cdn.jsdelivr.net/npm/daisyui@5"
-            rel="stylesheet"
-            type="text/css"
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Login | GT Issue Tracker</title>
-</head>
-<body>
-
-</body>
+  </head>
+  <body class="py-20 min-h-screen max-w-sm mx-auto">
+    <!-- Form -->
+    <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto">
+      <!-- top part -->
+      <div class="logo mx-auto text-center pt-10">
+        <img class="mx-auto" src="./assets/github-logo.png" alt="" />
+        <h2 class="text-[#1F2937] text-[24px] font-semibold">
+          GitHub Issues Tracker
+        </h2>
+        <p class="text-[#64748B] text-[16px]">Sign in to manage your issues</p>
+      </div>
+      <!-- Form -->
+      <div class="card-body">
+        <fieldset class="fieldset">
+          <label class="label text-[16px] text-[#1F2937] font-medium"
+            >Username</label
+          >
+          <input
+            type="email"
+            class="input rounded-[8px]"
+            placeholder="Enter Username"
+          />
+          <p class="text-[14px] text-[#4A00FF]">Default:admin</p>
+          <label class="label text-[16px] text-[#1F2937] font-medium"
+            >Password</label
+          >
+          <input
+            type="Enter password"
+            class="input rounded-[8px]"
+            placeholder="Enter Password"
+          />
+          <p class="text-[14px] text-[#4A00FF]">Default:admin123</p>
+          <button
+            class="btn btn-neutral rounded-[8px] mt-4 bg-[#4A00FF] border-none"
+          >
+            Sign In
+          </button>
+        </fieldset>
+        <hr class="opacity-10 my-[24px]" />
+        <p class="text-center">Demo Credentials:</p>
+        <div class="bg-[#F8FAFC] p-[24px] rounded-[8px] text-center">
+          <p><span class="font-semibold">Username:</span> admin</p>
+          <p><span class="font-semibold">Password:</span> admin123</p>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
