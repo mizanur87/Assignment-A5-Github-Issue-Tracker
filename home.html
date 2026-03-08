@@ -11,10 +11,22 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
+    <!-- Font wesome Connection -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Title -->
+
     <title>Home | GT Issue Tracker</title>
+
+    <!-- Title -->
   </head>
 
-  <body>
+  <body class="bg-[#f7f7f7]">
     <nav class="bg-base-100 shadow-sm p-8 flex justify-between">
       <div class="flex gap-2 items-center">
         <img class="w-8.75" src="./assets/github-logo.png" alt="" />
@@ -36,7 +48,7 @@
       </div>
     </nav>
 
-    <main class="w-[70%] mx-auto bg-[#575e67]">
+    <main class="container mx-auto">
       <!-- Toogle section -->
       <section class="bg-white p-6 my-16 shadow-lg">
         <p class="bg-[#4A00FF] text-white btn">All</p>
@@ -45,7 +57,25 @@
       </section>
 
       <!-- Dashboardsection -->
-      <section></section>
+      <section>
+        <!-- container -->
+        <div
+          id="dashContainer"
+          class="grid grid-cols-1 gap-2.5 bg-[#FBFBFB] px-10 py-5 sm:grid-cols-4 lg:grid-cols-4 md:grid-cols-4"
+        >
+          <!-- Dynamically added -->
+        </div>
+        <div
+          id="loadingSpin"
+          class="h-[60vh] hidden flex justify-center items-center"
+        >
+          <span class="loading loading-ball loading-xs"></span>
+          <span class="loading loading-ball loading-sm"></span>
+          <span class="loading loading-ball loading-md"></span>
+          <span class="loading loading-ball loading-lg"></span>
+          <span class="loading loading-ball loading-xl"></span>
+        </div>
+      </section>
     </main>
 
     <!-- Connection home.js -->
