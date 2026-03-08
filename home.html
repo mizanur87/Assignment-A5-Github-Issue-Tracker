@@ -19,6 +19,14 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <!-- Css -->
+    <style>
+      .active {
+        background-color: #4a00ff;
+        color: white;
+      }
+    </style>
     <!-- Title -->
 
     <title>Home | GT Issue Tracker</title>
@@ -36,11 +44,13 @@
       </div>
       <div class="flex gap-2">
         <input
+          id="srchBox"
           type="text"
           placeholder="Search issues"
           class="input input-bordered w-24 md:w-auto"
         />
         <button
+          id="srchBtn"
           class="btn bg-[#4A00FF] text-white text-[16px] py-[10px] px-[12px] rounded-[4px]"
         >
           + New Buttons
@@ -51,9 +61,9 @@
     <main class="container mx-auto">
       <!-- Toogle section -->
       <section class="bg-white p-6 my-16 shadow-lg">
-        <p class="bg-[#4A00FF] text-white btn">All</p>
-        <p class="btn">Open</p>
-        <p class="btn">Closed</p>
+        <button class="tg active btn" value="all">All</button>
+        <button class="tg btn" value="open">Open</button>
+        <button class="tg btn" value="closed">Closed</button>
       </section>
 
       <!-- Dashboardsection -->
