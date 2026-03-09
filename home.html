@@ -58,9 +58,9 @@
       </div>
     </nav>
 
-    <main class="container mx-auto">
+    <main class="container w-[90%] mx-auto">
       <!-- Toogle section -->
-      <section class="bg-white p-6 mt-10 shadow-lg">
+      <section class="bg-white p-6 mt-10 shadow-lg rounded-md">
         <button class="tg active btn" value="all">All</button>
         <button class="tg btn" value="open">Open</button>
         <button class="tg btn" value="closed">Closed</button>
@@ -68,7 +68,7 @@
       <!-- Total count & overview -->
 
       <section
-        class="p-6 mt-16 shadow-lg bg-white flex justify-between border-b-2 border-[#e9e6e6]"
+        class="p-6 mt-16 shadow-lg bg-white flex justify-between border-b-2 border-[#e9e6e6] rounded-md"
       >
         <div class="flex justify-start items-center gap-2">
           <img class="w-max-10 h-10" src="./assets/Aperture.png" alt="" />
@@ -84,13 +84,16 @@
         <div class="flex gap-1">
           <div class="flex items-center gap-1">
             <span
-              ><i class="fa-solid fa-circle" style="color: #00a96e"></i
+              ><i class="fa-solid fa-circle" style="color: #05df72"></i
             ></span>
             <p class="text-[#1F2937] text-[12px] font-semibold">Open</p>
           </div>
           <div class="flex items-center gap-1">
             <span
-              ><i class="fa-solid fa-circle" style="color: #a855f7"></i
+              ><i
+                class="fa-solid fa-circle"
+                style="color: oklch(71.4% 0.203 305.504)"
+              ></i
             ></span>
             <p class="text-[#1F2937] text-[12px] font-semibold">Closed</p>
           </div>
@@ -98,11 +101,11 @@
       </section>
 
       <!-- Dashboardsection -->
-      <section>
+      <section class="rounded-md">
         <!-- container -->
         <div
           id="dashContainer"
-          class="grid grid-cols-1 gap-2.5 bg-[#FBFBFB] px-10 py-5 sm:grid-cols-4 lg:grid-cols-4 md:grid-cols-4"
+          class="grid grid-cols-1 gap-5 space-y-4 bg-[#FBFBFB] px-10 py-5 sm:grid-cols-4 lg:grid-cols-4 md:grid-cols-4"
         >
           <!-- Dynamically added -->
         </div>
