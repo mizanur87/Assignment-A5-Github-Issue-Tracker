@@ -35,10 +35,10 @@
   </head>
 
   <body class="bg-[#f7f7f7]">
-    <nav class="bg-base-100 shadow-sm p-8 flex justify-between">
+    <nav class="bg-base-100 shadow-sm p-8 flex justify-between items-center">
       <div class="flex gap-2 items-center">
         <img class="w-8.75" src="./assets/github-logo.png" alt="" />
-        <p class="text-[#1F2937] text-[24px] font-semibold">
+        <p class="text-[#1F2937] text-[20px] font-semibold">
           GitHub Issues Tracker
         </p>
       </div>
@@ -53,7 +53,7 @@
           id="srchBtn"
           class="btn bg-[#4A00FF] text-white text-[16px] py-[10px] px-[12px] rounded-[4px]"
         >
-          + New Buttons
+          Search
         </button>
       </div>
     </nav>
@@ -67,15 +67,34 @@
       </section>
       <!-- Total count & overview -->
 
-      <section class="p-6 my-16 shadow-lg bg-white">
+      <section
+        class="p-6 mt-16 shadow-lg bg-white flex justify-between border-b-2 border-[#e9e6e6]"
+      >
         <div class="flex justify-start items-center gap-2">
           <img class="w-max-10 h-10" src="./assets/Aperture.png" alt="" />
           <div>
-            <p class="text-[14px] text-[#1F2937] font-bold">50 Issues</p>
+            <p
+              id="issuesCount"
+              class="text-[14px] text-[#1F2937] font-bold"
+            ></p>
             <p>Track and manage your project issues</p>
           </div>
         </div>
-        <div></div>
+
+        <div class="flex gap-1">
+          <div class="flex items-center gap-1">
+            <span
+              ><i class="fa-solid fa-circle" style="color: #00a96e"></i
+            ></span>
+            <p class="text-[#1F2937] text-[12px] font-semibold">Open</p>
+          </div>
+          <div class="flex items-center gap-1">
+            <span
+              ><i class="fa-solid fa-circle" style="color: #a855f7"></i
+            ></span>
+            <p class="text-[#1F2937] text-[12px] font-semibold">Closed</p>
+          </div>
+        </div>
       </section>
 
       <!-- Dashboardsection -->
@@ -98,6 +117,71 @@
           <span class="loading loading-ball loading-xl"></span>
         </div>
       </section>
+
+      <!-- product details modal -->
+      <!-- Open the modal using ID.showModal() method -->
+
+      <dialog id="my_modal_1" class="modal">
+        <div class="modal-box">
+          <h3 id="modTitle" class="text-lg font-bold"></h3>
+
+          <div class="flex justify-start items-center gap-1">
+            <button
+              id="modstat"
+              class="bg-[#00A96E] text-[12px] px-3 py-1 text-white rounded-full border-none"
+            ></button>
+            <p class="py-4 text-[#64748B] text-[15px]">.</p>
+            <p id="modassignee" class="py-4 text-[#64748B] text-[12px]"></p>
+            <p class="py-4 text-[#64748B] text-[15px]">.</p>
+            <p id="moddate" class="py-4 text-[#64748B] text-[12px]"></p>
+          </div>
+
+          <!-- bug buttons -->
+          <div class="card-actions justify-start">
+            <button
+              id="modp1"
+              class="bg-[#FEECEC] text-[12px] px-3 py-1 btn-error text-[#EF4444] rounded-full border-[#f8a6a6] border-[.5px]"
+            >
+              <span
+                ><i class="fa-solid fa-bug" style="color: #ef4444"></i
+              ></span>
+            </button>
+            <button
+              id="modp2"
+              class="bg-[#FFF8DB] text-[12px] px-3 py-1 btn-error text-[#D97706] rounded-full border-[#FDE68A] border-[.5px]"
+            >
+              <span
+                ><i class="fa-regular fa-life-ring" style="color: #d97706"></i
+              ></span>
+            </button>
+          </div>
+
+          <p id="modDes" class="py-4 text-[#64748B] text-[12px]"></p>
+
+          <div class="bg-[#F8FAFC] rounded-md p-4 flex justify-between">
+            <div class="flex flex-col space-y-2">
+              <p class="text-[#64748B] text-[12px]">Assignee:</p>
+              <p id="modauth" class="font-semibold"></p>
+            </div>
+            <div class="space-y-2">
+              <p class="text-[#64748B] text-[12px]">Priority:</p>
+              <button
+                id="modprio"
+                class="bg-[#00A96E] text-[12px] px-2 py-1 text-white rounded-full border-none"
+              ></button>
+            </div>
+          </div>
+
+          <div class="modal-action">
+            <form method="dialog">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn bg-[#4A00FF] text-amber-50 border-none">
+                Close
+              </button>
+            </form>
+          </div>
+        </div>
+      </dialog>
     </main>
 
     <!-- Connection home.js -->

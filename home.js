@@ -11,6 +11,24 @@ let issues = "";
 let fdata = "";
 let filtValue = "all";
 
+const modTitle = document.querySelector("#modTitle");
+const modDes = document.querySelector("#modDes");
+const modstat = document.querySelector("#modstat");
+const modassignee = document.querySelector("#modassignee");
+const moddate = document.querySelector("#moddate");
+const modauth = document.querySelector("#modauth");
+const modprio = document.querySelector("#modprio");
+const modp1 = document.querySelector("#modp1");
+const modp2 = document.querySelector("#modp2");
+
+const issuesCount = document.querySelector("#issuesCount");
+
+// Update counts of issues
+
+function updatecount(count) {
+  issuesCount.textContent = `${count} issues`;
+}
+
 // Search Function
 
 srchBox.addEventListener("input", () => {
@@ -72,9 +90,33 @@ async function loadAll(params) {
 
 loadAll();
 
+async function loadSingle(id) {
+  const rese = await fetch(
+    `https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`,
+  );
+  const datas = await rese.json();
+  renderModal(datas.data);
+}
+
+// Modal function
+
+function renderModal(obj) {
+  modTitle.textContent = obj.title;
+  modDes.textContent = obj.description;
+  modstat.textContent = obj.status;
+  modassignee.textContent = `opened by ${obj.author}`;
+  moddate.textContent = obj.createdAt;
+  modauth.textContent = obj.author;
+  modprio.textContent = obj.priority;
+  modp1.textContent = obj.labels[0];
+  modp2.textContent = obj.labels[1];
+}
+
 function displayCards(cards) {
   dashContainer.innerHTML = "";
   cards.forEach((element) => {
+    updatecount(cards.length);
+
     // console.log(element);
     const card = document.createElement("div");
     card.className =
@@ -85,6 +127,11 @@ function displayCards(cards) {
     } else {
       card.classList.add("border-purple-400");
     }
+
+    card.addEventListener("click", function () {
+      my_modal_1.showModal();
+      loadSingle(element.id);
+    });
 
     card.innerHTML = `<div class="card-body  space-y-1.5">
 
