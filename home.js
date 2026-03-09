@@ -8,13 +8,14 @@ const filterBtn = document.querySelectorAll(".tg");
 const srchBox = document.querySelector("#srchBox");
 const srchBtn = document.querySelector("#srchBtn");
 let issues = "";
+let fdata = "";
 let filtValue = "all";
 
 // Search Function
 
 srchBox.addEventListener("input", () => {
   const val = srchBox.value.trim();
-  console.log(val);
+  //   console.log(val);
   searchItem(val);
 });
 
@@ -66,6 +67,7 @@ async function loadAll(params) {
 
   displayCards(data.data);
   issues = data.data;
+  fdata = data.data;
 }
 
 loadAll();
@@ -75,8 +77,18 @@ function displayCards(cards) {
   cards.forEach((element) => {
     // console.log(element);
     const card = document.createElement("div");
-    card.className = "card bg-base-100 w-max-50 shadow-sm rounded-[4px]";
-    card.innerHTML = `<div class="card-body px-4 space-y-1.5">
+    card.className =
+      "card bg-base-100 w-max-50 shadow-sm rounded-[4px] border-t-4";
+
+    if (element.status === "open") {
+      card.classList.add("border-green-400");
+    } else {
+      card.classList.add("border-purple-400");
+    }
+
+    card.innerHTML = `<div class="card-body  space-y-1.5">
+
+   
               <!-- top buttons -->
               <div class="flex justify-between">
                 <div class="flex justify-center items-center">
@@ -130,7 +142,7 @@ function searchItem(item) {
   const query = item.toLowerCase();
   let searched = [];
   if (query.length > 0) {
-    for (let eleme of issues) {
+    for (let eleme of fdata) {
       if (
         eleme.title.toLowerCase().includes(query) ||
         eleme.author.toLowerCase().includes(query) ||
@@ -141,6 +153,6 @@ function searchItem(item) {
     }
     displayCards(searched);
   } else {
-    displayCards(issues);
+    displayCards(fdata);
   }
 }
